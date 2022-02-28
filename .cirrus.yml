@@ -85,7 +85,7 @@ task:
      - export CCACHE_COMPRESSLEVEL=-3
      - export CCACHE_LIMIT_MULTIPLE=0.9
      - which ccache
-     - ccache -M 150
+     - ccache -M 100
      - ccache -z
      - command=$(tail $CIRRUS_WORKING_DIR/build.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v '# upload rom')
      - bash -c "$command" &
